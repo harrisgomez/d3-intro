@@ -49,6 +49,10 @@ const bars = container.selectAll('.bar')
     .append('rect')                                     // div -> rect
     .classed('bar', true)                               // adds the 'bar' class to the newly rendered divs
     .attr('width', xScale.bandwidth())                  // style -> attr. Values automatically treated as 'px'. Can dynamically render values returned by d3-scale fns
-    .attr('height', data => 200 - yScale(data.value))   // need to factor in actual container height since d3 starts plotting from the top-left corner
+    .attr('height', data => 200 - yScale(data.value))   // need to deduct actual container height since d3 starts plotting from the top-left corner
     .attr('x', data => xScale(data.region))
     .attr('y', data => yScale(data.value))
+
+setTimeout(() => {
+    bars.data(DUMMY_DATA.slice(0, 2)).exit().remove();
+}, 2000);
