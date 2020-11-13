@@ -1,10 +1,16 @@
 .container {
     width: 250px;
     height: 200px;
-    display: flex;
-    justify-content: space-around;
+    /* display: flex;
+    justify-content: space-around; */
+
+    /* SVG */
+    border: 1px solid #720570;
 }
 
 .bar {
-    background-color: #720570;
+    /* background-color: #720570; */
+
+    /* SVG */
+    fill: #720570;
 }
